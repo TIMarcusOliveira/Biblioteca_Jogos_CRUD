@@ -1,0 +1,67 @@
+<?php
+    include_once('../../includes/conn.php');
+    session_start();
+    if (!isset($_SESSION["user"])) {
+        header("Location: ../login/login.php");
+        exit;
+    }
+
+
+    $user_id = $_SESSION["user"]["id"];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $nome = $_POST['nome'];
+        $genero = $_POST['genero'];
+        $plataformas = $_POST['plataformas'];
+        $ano_lancamento = $_POST['ano_lancamento'];
+        
+        $imagem_capa = null;
+        $upload_dir = '../../public/upload/';
+        include_once('../../includes/upload.php');
+
+        $sql = "INSERT INTO jogos (nome, genero, plataformas, ano_lancamento, imagem_capa, usuario_id) 
+                VALUES (:nome, :genero, :plataformas, :ano_lancamento, :imagem_capa, :usuario_id)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':genero', $genero);
+        $stmt->bindParam(':plataformas', $plataformas);
+        $stmt->bindParam(':ano_lancamento', $ano_lancamento);
+        $stmt->bindParam(':imagem_capa', $imagem_capa);
+        $stmt->bindParam(':usuario_id', $user_id);
+        
+        if ($stmt->execute()) {
+            header("Location: readgame.php");
+            exit;
+        } else {
+            echo "Erro ao registrar o jogo.";
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registrar jogos </title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="nome">Nome do Jogo:</label>
+        <input type="text" id="nome" name="nome" required><br>
+
+        <label for="genero">Gênero:</label>
+        <input type="text" id="genero" name="genero" required><br>
+
+        <label for="plataformas">Plataformas:</label>
+        <input type="text" id="plataformas" name="plataformas" required><br>
+
+        <label for="ano_lancamento">Ano de Lançamento:</label>
+        <input type="number" id="ano_lancamento" name="ano_lancamento" required><br>
+
+        <label for="imagem_capa">Imagem da Capa:</label>
+        <input type="file" id="imagem_capa" name="imagem_capa"><br>
+
+        <input type="submit" value="Registrar Jogo">
+    </form>
+</body>
+</html>

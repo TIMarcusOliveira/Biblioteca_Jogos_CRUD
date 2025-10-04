@@ -22,7 +22,7 @@ if(isset($_POST['user']) && isset($_POST['password'])) {
   } 
   if($user && hash('sha256', $password) === $user['senha']) {
     echo "<script>alert('Login bem-sucedido!');</script>";
-    $_SESSION['user'] = $_POST['user'];
+    $_SESSION['user'] = $user;
     header('Location: ../index.php');
     exit;
   }

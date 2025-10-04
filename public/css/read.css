@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+.game-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-item {
+  margin: 1em 0em 0em 1em;
+  background-color: #ccc;
+  width: 80%;
+  height: 150px;
+}

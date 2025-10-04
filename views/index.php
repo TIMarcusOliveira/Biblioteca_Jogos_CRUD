@@ -1,7 +1,6 @@
 <?php
 session_start();
 if (!isset($_SESSION["user"])) {
-    echo "<script>alert('njashjasdhjhj');</script>";
     header("Location: login/login.php");
     exit;
 }
@@ -17,9 +16,9 @@ if (!isset($_SESSION["user"])) {
   <body>
     <nav>
       <div class="vertical-nav">
-        <a href="./crud/readgame.html"> Biblioteca </a>
-        <a href="./crud/creategame.html"> Registrar Jogo </a>
-        <a href="./crud/updategame.html"> Atualizar Registros </a>
+        <a href="./crud/readgame.php"> Biblioteca </a>
+        <a href="./crud/creategame.php"> Registrar Jogo </a>
+        <a href="./crud/searchgame.php"> Atualizar Registros </a>
         <a href="./login/logout.php"> Encerrar sessão </a>
       </div>
     </nav>
