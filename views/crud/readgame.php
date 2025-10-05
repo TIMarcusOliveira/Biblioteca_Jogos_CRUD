@@ -28,6 +28,15 @@ if (!$games) {
     <link rel="stylesheet" href="../../public/css/read.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="../index.php">Voltar para Home</a>
+            <a href="creategame.php">Adicionar novo jogo</a>
+        </nav>
+
+        <h1>Biblioteca de Jogos</h1>
+    </header>
+
     <main>
         <div class="game-control">
             <?php foreach ($games as $game): ?>
@@ -42,24 +51,24 @@ if (!$games) {
                 ?>
                 <div class="game-item">
                     <?php if (!empty($cover_image)): ?>
-                        <img src="<?= $cover_image ?>" alt="Capa do jogo" style="max-width:150px;max-height:150px;"><br>
+                        <img src="<?= $cover_image ?>" alt="Capa do jogo"><br>
                     <?php else: ?>
-                        <img src="../../public/img/default.png" alt="Sem capa" style="max-width:150px;max-height:150px;"><br>
+                        <img src="../../public/img/default_game.png" alt="Sem capa"><br>
                     <?php endif; ?>
-                    <strong>Título:</strong> <?= $title ?><br>
-                    <strong>Gênero:</strong> <?= $genre ?><br>
-                    <strong>Plataforma:</strong> <?= $platform ?><br>
-                    <strong>Ano de Lançamento:</strong> <?= $release_year ?><br>
-                    <a href="<?= $edit_link ?>">Editar</a> |
-                    <a href="<?= $delete_link ?>" onclick="return confirm('Tem certeza que deseja deletar este jogo?');">Deletar</a>
+
+                    <div class="info">
+                        <p id="title"><?= $title ?><br></p> 
+                        <p id="gender">Gênero: <?= $genre ?><br></p>
+                        <p id="platforms">Plataformas: <?= $platform ?><br></p>
+                        <p id="rel_year">Ano de Lançamento: <?= $release_year ?><br></p>
+                    </div>
+                    <div class="actions">
+                        <a href="<?= $edit_link ?>"><img src="../../public/img/edit-icon.png" alt="Editar"></a> 
+                        <a href="<?= $delete_link ?>"><img src="../../public/img/thrash-icon.png" alt="Apagar"></a>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
-
-        <nav>
-            <a href="../index.php">Voltar para Home</a>
-            <a href="creategame.php">Adicionar novo jogo</a>
-        </nav>
     </main>
 </body>
 </html>

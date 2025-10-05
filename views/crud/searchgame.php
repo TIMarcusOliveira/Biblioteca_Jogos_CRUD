@@ -1,5 +1,3 @@
-fazer search q manda p o editar de vdd
-terminar o updategame.php
 <?php
     include_once('../../includes/conn.php');
     session_start();
@@ -10,7 +8,6 @@ terminar o updategame.php
 
     if(isset($_POST['search'])) {
         $searchTerm = $_POST['search'];
-        // Fetch game details from the database
         $sql = "SELECT * FROM jogos WHERE nome LIKE :search AND usuario_id = :user_id";
         $stmt = $pdo->prepare($sql);
         $likeSearchTerm = '%' . $searchTerm . '%';
