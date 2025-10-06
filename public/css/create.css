@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 100vw;
+  background-color: #c2c0c0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #0033a0;
+  padding: 1rem 1.5rem;
+  color: white;
+  position: relative;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+
+header nav {
+  flex: 0 0 auto;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  transition: opacity 0.2s;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+header h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  font-size: 1.8em;
+  white-space: nowrap;
+}
+
+/* Centraliza o conteúdo principal */
+main {
+  flex: 1; /* ocupa o restante da altura */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+form {
+  background-color: #343231;
+  color: white;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-control label {
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 1.2em;
+}
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #0033a0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #002070;
+}
+
+/* Responsividade */
+@media (max-width: 1010px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.8rem;
+  }
+
+  header h1 {
+    position: static;
+    transform: none;
+    margin-top: 0.5rem;
+    white-space: normal;
+    font-size: 1.5em;
+  }
+
+  header nav {
+    margin-bottom: 0.5rem;
+  }
+
+  header nav a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 1rem;
+  }
+
+  form {
+    width: 90%;
+  }
+}
