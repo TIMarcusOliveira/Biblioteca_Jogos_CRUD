@@ -1,0 +1,168 @@
+/* ===================== RESET GLOBAL ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* ===================== BODY ===================== */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #c2c0c0;
+  color: #000;
+  max-width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===================== HEADER PADRÃO ===================== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0033a0;
+  padding: 1rem 1.5rem;
+  height: 68px;
+  color: white;
+  position: relative;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+
+header nav {
+  flex: 0 0 auto;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  transition: opacity 0.2s;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+header h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  font-size: 1.8em;
+  white-space: nowrap;
+}
+
+/* Botões dentro do header (ex: Mudar cor, Logout etc.) */
+header button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #222;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+header button:hover {
+  background-color: #444;
+}
+
+/* ===================== LAYOUT PRINCIPAL ===================== */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+}
+
+/* ===================== FORMULÁRIOS ===================== */
+form {
+  background-color: #343231;
+  color: white;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-control label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="password"],
+input[type="email"] {
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #0033a0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #002070;
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 1010px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.8rem;
+    height: auto; /* Evita que o header fique espremido */
+  }
+
+  header h1 {
+    position: static;
+    transform: none;
+    margin-top: 0.5rem;
+    white-space: normal;
+    font-size: 1.5em;
+  }
+
+  header nav {
+    margin-bottom: 0.5rem;
+  }
+
+  header nav a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 1rem;
+  }
+
+  header button {
+    margin-top: 0.8rem;
+  }
+
+  form {
+    width: 90%;
+  }
+}

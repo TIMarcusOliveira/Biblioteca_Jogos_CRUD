@@ -25,6 +25,7 @@ if (!$games) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca de Jogos</title>
+    <link rel="stylesheet" href="../../public/css/global.css">
     <link rel="stylesheet" href="../../public/css/read.css">
 </head>
 <body>
@@ -35,6 +36,9 @@ if (!$games) {
         </nav>
 
         <h1>Biblioteca de Jogos</h1>
+        
+        <button id="toggleBtn">Mudar cor</button>
+
     </header>
 
     <main>
@@ -49,7 +53,8 @@ if (!$games) {
                     $edit_link = "updategame.php?id=" . $game['id'];
                     $delete_link = "deletegame.php?id=" . $game['id'];
                 ?>
-                <div class="game-item">
+
+                <div class="game-item" id="caixa">
                     <?php if (!empty($cover_image)): ?>
                         <img src="<?= $cover_image ?>" alt="Capa do jogo"><br>
                     <?php else: ?>
@@ -70,5 +75,16 @@ if (!$games) {
             <?php endforeach; ?>
         </div>
     </main>
+
+    <script>
+        const btn = document.getElementById('toggleBtn');
+        const cards = document.querySelectorAll('.game-item');
+
+        btn.addEventListener('click', () => {
+            cards.forEach(card => {
+                card.classList.toggle('ativo'); // alterna a cor de todos os cards
+            });
+        });
+    </script>
 </body>
 </html>

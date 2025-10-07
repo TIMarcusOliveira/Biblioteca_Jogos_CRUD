@@ -43,6 +43,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Registrar jogos </title>
+    <link rel="stylesheet" href="../../public/css/global.css">
     <link rel="stylesheet" href="../../public/css/create.css">
 </head>
 <body>
@@ -56,28 +57,34 @@
     </header>
     <main>
         <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-control">
-                <label for="nome">Título do Jogo:</label>
-                <input type="text" id="nome" name="nome" required><br>
+            <div class="rows"> 
+                <div class="form-control">
+                    <label for="nome">Título do Jogo:</label>
+                    <input type="text" id="nome" name="nome" required><br>
+                </div>
             </div>
+        
+            <div class="rows">
+                <div class="form-control">
+                    <label for="genero">Gênero:</label>
+                    <input type="text" id="genero" name="genero" required><br>
+                </div>
     
-            <div class="form-control">
-                <label for="genero">Gênero:</label>
-                <input type="text" id="genero" name="genero" required><br>
+                <div class="form-control">
+                    <label for="ano_lancamento">Ano de Lançamento:</label>
+                    <input type="number" id="ano_lancamento" name="ano_lancamento" required><br>
+                </div>
             </div>
-    
-            <div class="form-control">
-                <label for="plataformas">Plataformas:</label>
-                <input type="text" id="plataformas" name="plataformas" required><br>
-    
+            <div class="rows">
+                <div class="form-control">
+                    <label for="plataformas">Plataformas:</label>
+                    <input type="text" id="plataformas" name="plataformas" required><br>
+        
+                </div>
             </div>
-            
-            <div class="form-control">
-                <label for="ano_lancamento">Ano de Lançamento:</label>
-                <input type="number" id="ano_lancamento" name="ano_lancamento" required><br>
-            </div>
+                
     
-            <div class="form-control">
+            <div class="form-control" id="file">
                 <label for="imagem_capa">Imagem da Capa:</label>
                 <input type="file" id="imagem_capa" name="imagem_capa"><br>
             </div>
