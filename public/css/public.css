@@ -1,0 +1,140 @@
+/* Estilo geral inspirado no dashboard (pós-login) */
+.public-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 1em;
+  flex: 1;
+}
+
+/* Sessão de introdução */
+.intro {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.intro h2 {
+  color: #0033a0;
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+
+.intro .subtitle {
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #0033a0;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #1b51c5;
+  transform: translateY(-3px);
+}
+
+.btn.secondary {
+  background-color: #00bfff;
+}
+
+.btn.secondary:hover {
+  background-color: #33ccff;
+}
+
+/* Sessão sobre */
+.about {
+  width: 80%;
+  max-width: 800px;
+  text-align: justify;
+  margin-bottom: 3em;
+}
+
+.about h2 {
+  color: #0033a0;
+  font-size: 1.7em;
+  margin-bottom: 0.5em;
+}
+
+/* Sessão de funcionalidades */
+.features {
+  text-align: center;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.features h2 {
+  color: #0033a0;
+  margin-bottom: 1.5em;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: #0033a0;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.2s, background-color 0.3s;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background-color: #1b51c5;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #00bfff;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+footer {
+  text-align: center;
+  background-color: #0033a0;
+  color: white;
+  padding: 15px 0;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .intro h2 {
+    font-size: 1.6em;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

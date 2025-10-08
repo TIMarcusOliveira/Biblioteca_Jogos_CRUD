@@ -11,12 +11,14 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nome = $_POST['nome'];
         $genero = $_POST['genero'];
-        $plataformas = $_POST['plataformas'];
         $ano_lancamento = $_POST['ano_lancamento'];
         
         $imagem_capa = null;
         $upload_dir = '../../public/upload/';
         include_once('../../includes/upload.php');
+
+        // Combina as plataformas marcadas em uma string separada por vírgulas
+        $plataformas = isset($_POST["plataformas"]) ? implode(", ", $_POST["plataformas"]) : ""; 
 
         $sql = "INSERT INTO jogos (nome, genero, plataformas, ano_lancamento, imagem_capa, usuario_id) 
                 VALUES (:nome, :genero, :plataformas, :ano_lancamento, :imagem_capa, :usuario_id)";
@@ -60,25 +62,34 @@
             <div class="rows"> 
                 <div class="form-control">
                     <label for="nome">Título do Jogo:</label>
-                    <input type="text" id="nome" name="nome" required><br>
+                    <input type="text" id="nome" name="nome" required>
                 </div>
             </div>
         
             <div class="rows" id="double">
                 <div class="form-control">
                     <label for="genero">Gênero:</label>
-                    <input type="text" id="genero" name="genero" required><br>
+                    <input type="text" id="genero" name="genero" required>
                 </div>
     
                 <div class="form-control">
                     <label for="ano_lancamento">Ano de Lançamento:</label>
-                    <input type="number" id="ano_lancamento" name="ano_lancamento" required><br>
+                    <input type="number" id="ano_lancamento" name="ano_lancamento" min="1970" max="2030" required>
                 </div>
             </div>
             <div class="rows">
                 <div class="form-control">
-                    <label for="plataformas">Plataformas:</label>
-                    <input type="text" id="plataformas" name="plataformas" required><br>
+                    <label>Plataformas:</label>
+                    <div class="checkbox-group">
+                    <label><input type="checkbox" name="plataformas[]" value="PC" /> PC</label>
+                    <label><input type="checkbox" name="plataformas[]" value="PlayStation 5" /> PlayStation 5</label>
+                    <label><input type="checkbox" name="plataformas[]" value="PlayStation 4" /> PlayStation 4</label>
+                    <label><input type="checkbox" name="plataformas[]" value="Xbox Series X/S" /> Xbox Series X/S</label>
+                    <label><input type="checkbox" name="plataformas[]" value="Xbox One" /> Xbox One</label>
+                    <label><input type="checkbox" name="plataformas[]" value="Nintendo Switch" /> Nintendo Switch</label>
+                    <label><input type="checkbox" name="plataformas[]" value="Mobile" /> Mobile</label>
+                    <label><input type="checkbox" name="plataformas[]" value="Outro" /> Outro</label>
+                    </div>
         
                 </div>
             </div>
@@ -86,7 +97,7 @@
     
             <div class="form-control" id="file">
                 <label for="imagem_capa">Imagem da Capa:</label>
-                <input type="file" id="imagem_capa" name="imagem_capa"><br>
+                <input type="file" id="imagem_capa" name="imagem_capa">
             </div>
     
             <input type="submit" value="Registrar Jogo">

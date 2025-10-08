@@ -47,18 +47,6 @@ input[type="file"] {
   border-radius: 5px;
 }
 
-#double {
-  flex: 1;
-  gap: 20px;
-  max-width: 100%;
-  justify-content: space-between;
-}
-
-#file {
-  align-items: center;
-  width: 400px !important;
-}
-
 input[type="submit"] {
   background-color: #0033a0;
   color: white;
@@ -72,6 +60,39 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #002070;
+}
+
+#double {
+  flex: 1;
+  gap: 20px;
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px 16px;
+  margin-bottom: 1em;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  accent-color: #0033a0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+#file {
+  align-items: center;
+  width: 400px !important;
 }
 
 /* Responsividade — mantém o padrão do global */

@@ -1,34 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>GameLib</title>
+    <link rel="stylesheet" href="public/css/global.css" />
+    <link rel="stylesheet" href="public/css/public.css" />
   </head>
   <body>
     <header>
       <nav>
-        <a href="./views/login/login.php"> Login </a>
-        <a href="./views/login/createacc.php"> Cadastro </a>
+        <a href="./views/login/login.php">Login</a>
+        <a href="./views/login/createacc.php">Cadastro</a>
       </nav>
+      <h1>GameLib</h1>
     </header>
-    <main>
-      <h1>Biblioteca de Jogos</h1>
-      <div class="about">
-        <h2>Sobre o sistema</h2>
 
+    <main class="public-container">
+      <section class="intro">
+        <h2>Bem-vindo à GameLib</h2>
+        <p class="subtitle">
+          Organize e gerencie sua biblioteca de jogos facilmente!
+        </p>
+        <div class="buttons">
+          <a href="./views/login/login.php" class="btn">Entrar</a>
+          <a href="./views/login/createacc.php" class="btn">Criar Conta</a>
+        </div>
+      </section>
+
+      <section class="about">
+        <h2>Sobre o Sistema</h2>
         <p>
           Este sistema foi desenvolvido por Marcus Vinicius de Paula Oliveira
-          como projeto de estudo para a matéria de Sistemas Web, ministrada pelo
-          professor Robson Palmeirense no curso de Informática da Etec de Santa
-          isabel. O objetivo deste sistema é permitir o cadastro, consulta,
-          atualização e exclusão (CRUD) de jogos em uma biblioteca virtual,
-          utilizando PHP com PDO para interagir com um banco de dados MySQL.
+          como projeto de estudo para a disciplina de Sistemas Web ministrada
+          pelo professor Robson Palmeirense no curso de Informática da Etec de
+          Santa Isabel.
         </p>
-      </div>
+        <p>
+          O objetivo do projeto é permitir o cadastro, consulta, atualização e
+          exclusão (CRUD) de jogos em uma biblioteca virtual, utilizando PHP com
+          PDO e banco de dados MySQL.
+        </p>
+      </section>
+
+      <section class="features">
+        <h2>Funcionalidades</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Contas Individuais</h3>
+            <p>Cada usuário possui seus próprios jogos cadastrados.</p>
+          </div>
+
+          <div class="card">
+            <h3>Sessões e Cookies</h3>
+            <p>O sistema usa sessões com cookies para manter o login ativo.</p>
+          </div>
+
+          <div class="card">
+            <h3>CRUD de Jogos</h3>
+            <p>Cadastre, visualize, edite e remova seus jogos facilmente.</p>
+          </div>
+        </div>
+      </section>
     </main>
+
     <footer>
-      Todos os direitos (não) reservados - Marcus Vinicius de Paula Oliveira
+      <p>© 2025 GameLib — Desenvolvido por Marcus Vinicius de Paula Oliveira</p>
     </footer>
   </body>
 </html>
