@@ -1,4 +1,3 @@
-/* ===================== RESET GLOBAL ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +5,6 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* ===================== BODY ===================== */
 body {
   display: flex;
   flex-direction: column;
@@ -17,7 +15,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ===================== HEADER PADRÃO ===================== */
 header {
   display: flex;
   align-items: center;
@@ -59,7 +56,6 @@ header h1 {
   white-space: nowrap;
 }
 
-/* Botões dentro do header (ex: Mudar cor, Logout etc.) */
 header button {
   padding: 10px 15px;
   border: none;
@@ -74,7 +70,6 @@ header button:hover {
   background-color: #444;
 }
 
-/* ===================== LAYOUT PRINCIPAL ===================== */
 main {
   display: flex;
   justify-content: center;
@@ -83,7 +78,6 @@ main {
   padding: 1em;
 }
 
-/* ===================== FORMULÁRIOS ===================== */
 form {
   background-color: #343231;
   color: white;
@@ -108,8 +102,7 @@ form {
 input[type="text"],
 input[type="number"],
 input[type="file"],
-input[type="password"],
-input[type="email"] {
+input[type="password"] {
   padding: 6px;
   border: none;
   border-radius: 5px;
@@ -129,6 +122,10 @@ input[type="submit"]:hover {
   background-color: #002070;
 }
 
+.errormsg {
+  color: red;
+}
+
 /* ===================== RESPONSIVIDADE ===================== */
 @media (max-width: 1010px) {
   header {
@@ -137,7 +134,7 @@ input[type="submit"]:hover {
     align-items: center;
     text-align: center;
     padding: 0.8rem;
-    height: auto; /* Evita que o header fique espremido */
+    height: auto;
   }
 
   header h1 {

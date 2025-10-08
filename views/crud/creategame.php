@@ -64,7 +64,7 @@
                 </div>
             </div>
         
-            <div class="rows">
+            <div class="rows" id="double">
                 <div class="form-control">
                     <label for="genero">Gênero:</label>
                     <input type="text" id="genero" name="genero" required><br>

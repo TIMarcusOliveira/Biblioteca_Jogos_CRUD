@@ -33,22 +33,30 @@ if(isset($_POST['user']) && isset($_POST['password'])) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../public/css/global.css" />
+    <link rel="stylesheet" href="../../public/css/login.css" />
     <title>Login</title>
   </head>
   <body>
     <form action="" method="post">
-
+      <h1> Acesse sua conta </h1>
       <p class="errormsg">
         <?php if(isset($msg)) { echo $msg; } ?>
       </p>
-      <label for="user"> Nome de usuário </label>
-      <input type="text" name="user" />
+      <div class="form-control">
 
-      <label for="password"> Senha </label>
-      <input type="text" name="password" />
+        <label for="user"> Nome de usuário </label>
+        <input type="text" name="user" required/>
+  
+        <label for="password"> Senha </label>
+        <input type="password" name="password" required/>
+      </div>
 
-      <input type="submit" value="Login" />
-      <a href="createacc.php">Criar uma nova conta</a>
+      <input type="submit" value="Login" required/>
+      <div class="actions">
+        <a href="../../index.html" id="back"> Home </a>
+        <a href="createacc.php">Não possui cadastro? Crie uma nova conta</a>
+      </div>
     </form>
   </body>
 </html>
