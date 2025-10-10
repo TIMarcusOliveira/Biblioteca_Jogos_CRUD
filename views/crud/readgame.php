@@ -8,7 +8,7 @@ if (!isset($_SESSION["user"])) {
 }
 
 $user_id = $_SESSION["user"]["id"];
-$sql = "SELECT * FROM jogos WHERE usuario_id = :user_id";
+$sql = "SELECT * FROM jogos WHERE usuario_id = :user_id ORDER BY nome ASC";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $stmt->execute();
@@ -35,7 +35,7 @@ if (!$games) {
             <a href="creategame.php">Adicionar novo jogo</a>
         </nav>
 
-        <h1>Biblioteca de Jogos</h1>
+        <h1>GameLib</h1>
         
         <button id="toggleBtn">Mudar cor</button>
 
@@ -66,10 +66,6 @@ if (!$games) {
                         <p id="gender">Gênero: <?= $genre ?><br></p>
                         <p id="platforms">Plataformas: <?= $platform ?><br></p>
                         <p id="rel_year">Ano de Lançamento: <?= $release_year ?><br></p>
-                    </div>
-                    <div class="actions">
-                        <a href="<?= $edit_link ?>"><img src="../../public/img/edit-icon.png" alt="Editar"></a> 
-                        <a href="<?= $delete_link ?>"><img src="../../public/img/thrash-icon.png" alt="Apagar"></a>
                     </div>
                 </div>
             <?php endforeach; ?>

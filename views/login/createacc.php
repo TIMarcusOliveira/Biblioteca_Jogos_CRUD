@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
       <input type="submit" value="Cadastrar" />
       <div class="actions">
-        <a href="../../index.html" id="back"> Home </a>
+        <a href="../../index.html" id="back"> Voltar </a>
         <a href="login.php">Já tem uma conta? Faça login</a>
       </div>
     </form>

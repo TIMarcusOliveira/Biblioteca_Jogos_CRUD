@@ -55,7 +55,7 @@
             <a href="readgame.php">Meus jogos</a>
         </nav>
 
-        <h1>Biblioteca de Jogos</h1>
+        <h1>GameLib</h1>
     </header>
     <main>
         <form action="" method="post" enctype="multipart/form-data">

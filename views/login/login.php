@@ -54,7 +54,7 @@ if(isset($_POST['user']) && isset($_POST['password'])) {
 
       <input type="submit" value="Login" required/>
       <div class="actions">
-        <a href="../../index.html" id="back"> Home </a>
+        <a href="../../index.html" id="back"> Voltar </a>
         <a href="createacc.php">Não possui cadastro? Crie uma nova conta</a>
       </div>
     </form>

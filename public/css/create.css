@@ -101,3 +101,15 @@ input[type="submit"]:hover {
     width: 90%;
   }
 }
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  a {
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: opacity 0.2s;
+  }
+}

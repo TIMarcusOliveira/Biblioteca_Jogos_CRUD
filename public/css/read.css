@@ -65,3 +65,30 @@ main {
 .ativo {
   background-color: #caa !important;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #0033a0;
+}
+
+.form-control {
+  align-items: center;
+  input {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+input[type="submit"] {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
