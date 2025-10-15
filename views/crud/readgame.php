@@ -15,8 +15,7 @@ $stmt->execute();
 $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (!$games) {
-    echo "Nenhum jogo encontrado.";
-    exit;
+    $msg = "Nenhum jogo encontrado.";
 }
 ?>
 <!DOCTYPE html>
@@ -42,6 +41,7 @@ if (!$games) {
     </header>
 
     <main>
+        <h1> <?= $msg ?? ''?> </h1>
         <div class="game-control">
             <?php foreach ($games as $game): ?>
                 <?php

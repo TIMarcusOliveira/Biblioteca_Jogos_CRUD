@@ -24,7 +24,8 @@ $user = $_SESSION["user"]["username"] ?? "Usuário";
         <a href="./crud/searchgame.php">Atualizar Registros</a>
       </nav>
       <h1>GameLib</h1>
-      <a href="./login/logout.php">
+      <a id="logout" href="./login/logout.php">
+        Sair
         <img src="../public/img/logout.png" alt="Sair" style="height:50px; width:auto;">
       </a>
     </header>
@@ -41,13 +42,13 @@ $user = $_SESSION["user"]["username"] ?? "Usuário";
         </a>
 
         <a href="./crud/creategame.php" class="card">
-          <img src="../public/img/add.png" alt="Adicionar Jogo" />
+          <img src="../public/img/plus.png" alt="Adicionar Jogo" />
           <h3>Registrar Jogo</h3>
           <p>Adicione novos títulos à sua coleção.</p>
         </a>
 
         <a href="./crud/searchgame.php" class="card">
-          <img src="../public/img/edit.png" alt="Editar Jogo" />
+          <img src="../public/img/edit-icon.png" alt="Editar Jogo" />
           <h3>Atualizar Registros</h3>
           <p>Edite ou remova jogos existentes.</p>
         </a>

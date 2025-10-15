@@ -47,7 +47,7 @@ CREATE TABLE `jogos` (
 INSERT INTO `jogos` (`id`, `usuario_id`, `nome`, `genero`, `imagem_capa`, `classificacao_etaria`, `ano_lancamento`, `plataformas`) VALUES
 (1, 1, 'The Legend of Zelda: Breath of the Wild', 'Aventura', 'zelda.jpg', '12+', '2017', 'Nintendo Switch, Wii U'),
 (2, 1, 'Hollow Knight', 'Metroidvania', 'hollowknight.jpg', '10+', '2017', 'PC, Nintendo Switch, PS4, Xbox One'),
-(3 2, 'God of War Ragnarok', 'Ação', 'gow_ragnarok.jpg', '18+', '2022', 'PS5, PS4'),
+(3, 2, 'God of War Ragnarok', 'Ação', 'gow_ragnarok.jpg', '18+', '2022', 'PS5, PS4'),
 (4, 2, 'Elden Ring', 'RPG', 'eldenring.jpg', '16+', '2022', 'PC, PS5, PS4, Xbox Series X/S, Xbox One');
 
 -- --------------------------------------------------------

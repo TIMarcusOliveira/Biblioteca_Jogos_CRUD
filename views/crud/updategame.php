@@ -72,7 +72,7 @@ $todasPlataformas = [
     <title>Atualizar Jogo</title>
     <link rel="stylesheet" href="../../public/css/global.css">
     <link rel="stylesheet" href="../../public/css/create.css">
-</head>
+    </head>
 <body>
     <header>
         <nav>
@@ -126,7 +126,7 @@ $todasPlataformas = [
             <input type="submit" value="Atualizar Jogo" name="update">
 
             <div class="actions">
-                <a href="readgame.php">Voltar</a>
+                <a href="searchgame.php">Voltar</a>
                 <a href="../index.php">Página inicial</a>
             </div>
         </form>
