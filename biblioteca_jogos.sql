@@ -39,17 +39,6 @@ CREATE TABLE `jogos` (
   `ano_lancamento` year(4) NOT NULL,
   `plataformas` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `jogos`
---
-
-INSERT INTO `jogos` (`id`, `usuario_id`, `nome`, `genero`, `imagem_capa`, `classificacao_etaria`, `ano_lancamento`, `plataformas`) VALUES
-(1, 1, 'The Legend of Zelda: Breath of the Wild', 'Aventura', 'zelda.jpg', '12+', '2017', 'Nintendo Switch, Wii U'),
-(2, 1, 'Hollow Knight', 'Metroidvania', 'hollowknight.jpg', '10+', '2017', 'PC, Nintendo Switch, PS4, Xbox One'),
-(3, 2, 'God of War Ragnarok', 'Ação', 'gow_ragnarok.jpg', '18+', '2022', 'PS5, PS4'),
-(4, 2, 'Elden Ring', 'RPG', 'eldenring.jpg', '16+', '2022', 'PC, PS5, PS4, Xbox Series X/S, Xbox One');
-
 -- --------------------------------------------------------
 
 --
@@ -62,13 +51,6 @@ CREATE TABLE `usuarios` (
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `username`, `senha`) VALUES
-(1, 'Samyra', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'),
-(2, 'Marcus', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
 
 --
 -- Índices para tabelas despejadas
