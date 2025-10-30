@@ -1,9 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION["user"])) {
-    header("Location: login/login.php");
-    exit;
-}
+include_once('../../includes/session.php');
 
 $user = $_SESSION["user"]["username"] ?? "Usuário";
 ?>

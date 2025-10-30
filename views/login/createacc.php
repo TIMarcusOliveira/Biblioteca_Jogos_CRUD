@@ -2,7 +2,7 @@
 require_once('../../includes/conn.php');
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (isset($_POST['cadastrar'])) {
     $user = trim($_POST['user'] ?? '');
     $password = trim($_POST['password'] ?? '');
     $confirm = trim($_POST['confirm'] ?? '');
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="password" name="confirm" required/>
       </div>
 
-      <input type="submit" value="Cadastrar" />
+      <input type="submit" name="cadastrar" value="Cadastrar" />
       <div class="actions">
         <a href="../../index.html" id="back"> Voltar </a>
         <a href="login.php">Já tem uma conta? Faça login</a>

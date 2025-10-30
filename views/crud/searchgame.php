@@ -1,13 +1,6 @@
 <?php
 include_once('../../includes/conn.php');
-session_start();
-
-if (!isset($_SESSION["user"])) {
-    header("Location: ../login/login.php");
-    exit;
-}
-
-$user_id = $_SESSION["user"]["id"];
+include_once('../../includes/session.php');
 
 // Se o formulário foi enviado, filtra por nome
 if (isset($_POST['search']) && !empty(trim($_POST['search']))) {

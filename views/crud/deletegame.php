@@ -1,17 +1,12 @@
 <?php
     include_once('../../includes/conn.php');
-    session_start();
-    if (!isset($_SESSION["user"])) {
-        header("Location: ../login/login.php");
-        exit;
-    }
+    include_once('../../includes/session.php');
 
     if (!isset($_GET['id'])) {
         header("Location: readgame.php");
         exit;
     }
 
-    $user_id = $_SESSION["user"]["id"];
     $sql = "SELECT * FROM jogos WHERE usuario_id = :user_id and id = :id ORDER BY nome ASC";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);

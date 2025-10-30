@@ -1,14 +1,8 @@
 <?php
     include_once('../../includes/conn.php');
-    session_start();
-    if (!isset($_SESSION["user"])) {
-        header("Location: ../login/login.php");
-        exit;
-    }
+    include_once('../../includes/session.php');
 
-
-    $user_id = $_SESSION["user"]["id"];
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['registrar'])) {
         $nome = $_POST['nome'];
         $genero = $_POST['genero'];
         $ano_lancamento = $_POST['ano_lancamento'];
@@ -100,7 +94,7 @@
                 <input type="file" id="imagem_capa" name="imagem_capa">
             </div>
     
-            <input type="submit" value="Registrar Jogo">
+            <input type="submit" name="registrar" value="Registrar Jogo">
         </form>
     </main>
 </body>

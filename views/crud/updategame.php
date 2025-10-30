@@ -1,9 +1,6 @@
 <?php
 include_once('../../includes/conn.php');
-session_start();
-if (!isset($_SESSION["user"])) {
-    header("Location: ../login/login.php");
-    exit;
+include_once('../../includes/session.php');
 }
 
 if (isset($_GET['id'])) {
@@ -11,7 +8,7 @@ if (isset($_GET['id'])) {
     $sql = "SELECT * FROM jogos WHERE id = :id AND usuario_id = :user_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':id', $game_id);
-    $stmt->bindParam(':user_id', $_SESSION["user"]["id"]);
+    $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
     $game = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -46,7 +43,7 @@ if (isset($_POST['update'])) {
     $stmt->bindParam(':plataformas', $plataformas);
     $stmt->bindParam(':ano_lancamento', $ano_lancamento);
     $stmt->bindParam(':id', $game_id);
-    $stmt->bindParam(':user_id', $_SESSION["user"]["id"]);
+    $stmt->bindParam(':user_id', $user_id);
 
     if ($stmt->execute()) {
         header("Location: readgame.php");
