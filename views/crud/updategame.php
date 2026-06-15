@@ -1,7 +1,7 @@
 <?php
 include_once('../../includes/conn.php');
 include_once('../../includes/session.php');
-}
+
 
 if (isset($_GET['id'])) {
     $game_id = $_GET['id'];
